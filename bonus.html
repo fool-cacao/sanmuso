@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<!--   <script type="module">
+
+  </script> -->
+
+    <title>さんむそ編成ボーナス</title>
+  </head>
+  <body>
+
+<main class="container">
+  <div class="row g-5">
+    <div class="col-md-8">
+      <h3 class="pb-4 mb-4 fst-italic border-bottom">
+        さんむそ編成ボーナス
+      </h3>
+
+      <article class="blog-post">
+
+        <!-- <h2 class="blog-post-title">Sample blog post</h2> -->
+
+        <!-- 参考 : https://bootstrap-guide.com/components/navs-tabs#tabs -->
+        <!-- タブ部分 -->
+        <ul id="myTab" class="nav nav-tabs mb-3" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button type="button" id="home-tab" class="nav-link active" data-bs-toggle="tab" data-bs-target="#home" role="tab" aria-controls="home" aria-selected="true">検索</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button type="button" id="profile-tab" class="nav-link" data-bs-toggle="tab" data-bs-target="#profile" role="tab" aria-controls="profile" aria-selected="false">計算</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button type="button" id="use-tab" class="nav-link" data-bs-toggle="tab" data-bs-target="#use" role="tab" aria-controls="use" aria-selected="false">使い方</button>
+          </li>
+        </ul>
+
+        <!-- パネル部分 -->
+        <div id="myTabContent" class="tab-content">
+          <div id="home" class="tab-pane active" role="tabpanel" aria-labelledby="home-tab">
+            <form class="needs-validation" novalidate>
+              <div class="row mb-3 g-3">
+
+                <div class="col-md-12 m-0">
+                  <div class="btn-group search-kingdom-switch" role="group" id="search-kingdom-switch">
+                    <input type="radio" class="btn-check" name="search-kingdom-switch" id="魏" autocomplete="off" checked>
+                    <label class="btn btn-sm btn-primary" for="魏">魏</label>
+                    <input type="radio" class="btn-check" name="search-kingdom-switch" id="呉" autocomplete="off">
+                    <label class="btn btn-sm btn-danger" for="呉">呉</label>
+                    <input type="radio" class="btn-check" name="search-kingdom-switch" id="蜀" autocomplete="off">
+                    <label class="btn btn-sm btn-success" for="蜀">蜀</label>
+                    <input type="radio" class="btn-check" name="search-kingdom-switch" id="晋" autocomplete="off">
+                    <label class="btn btn-sm btn-info" for="晋">晋</label>
+                    <input type="radio" class="btn-check" name="search-kingdom-switch" id="他" autocomplete="off">
+                    <label class="btn btn-sm btn-warning" for="他">他</label>
+                  </div>
+                </div>
+                <div class="col-md-12 m-0">
+                  <div class="kingdom-switch-dist search-busho" id="search-kingdom-switch">
+                    <div class="" role="group" id="魏"></div>
+                    <div class="d-none" role="group" id="呉"></div>
+                    <div class="d-none" role="group" id="蜀"></div>
+                    <div class="d-none" role="group" id="晋"></div>
+                    <div class="d-none" role="group" id="他"></div>
+                  </div>
+                </div>
+
+                <div class="col-md-12 m-0">
+                  <label for="resultSearchBonus" class="form-label"></label>
+                  <textarea class="form-control" id="resultSearchBonus" rows="12" readonly style="overflow:auto;"></textarea>
+                </div>
+
+
+              </div>
+            </form>
+          </div>
+          <div id="profile" class="tab-pane" role="tabpanel" aria-labelledby="profile-tab">
+
+            <form class="needs-validation" novalidate>
+              <div class="row mb-3 g-3">
+
+                <div class="col-md-12 m-0">
+                  <label for="calcBonus" class="form-label"></label>
+                  <select class="form-select" id="calcBonus" name="tags_new[]" multiple data-allow-new="true" data-max="12">
+                    <option disabled hidden value="">武将名を入力......</option>
+                  </select>
+                  <div class="invalid-feedback">Please select a valid tag.</div>
+                </div>
+
+                <div class="col-md-12 m-0">
+                  <label for="resultTextarea" class="form-label"></label>
+                  <textarea class="form-control" id="resultTextarea" rows="12" readonly style="overflow:auto;"></textarea>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div id="use" class="tab-pane" role="tabpanel" aria-labelledby="use-tab">
+            <p>アプリ『
+            <a href="https://game.smusou-sp.com/index.html" target="_blank" rel="noopener noreferrer">真・三國無双（さんむそアプリ）</a>
+            』の編成ボーナスを検討するためのサイトです。</p>
+            <h4>検索</h4>
+            <p>武将名を入力することで、その武将を含む 編成ボーナス 特殊 を表示します。</p>
+            <h4>計算</h4>
+            <p>武将名を複数入力することで、入力した武将の組み合わせで成立する編成ボーナスの合計値を表示します。</p>
+            <h6>[総合ボーナス]</h6>
+            <p>編成ボーナス 基本および特殊 の合計値を表示します。</p>
+            <h6>[編成ボーナス 特殊 貢献値]</h6>
+            <p>各武将の 編成ボーナス 特殊 に対する貢献値を表示します。例えば、攻:100と表示された武将を外すと、総合ボーナスの攻撃が100下がります。貢献値の少ない武将を外し、他の武将と入れ替えることを検討してみましょう。</p>
+            <p>なお、この数値には基本ボーナスは含まれません。上記の例で「攻:100」の武将を外した場合、攻撃が100下がる他に基本ボーナスの数値も下がる場合があります。</p>
+            <h6>------------ 詳細 ------------</h6>
+            <p>総合ボーナスを構成する編成ボーナスが表示されます。</p>
+            <h6>Tips</h6>
+            <p>武将入力欄には、複数の武将を一度に入力することも可能です。</p>
+            <p>例えば「呂布攻,呂玲綺迅,陳宮迅,張遼攻,曹操攻,夏侯惇防」と一度に入力することも可能です。なお、例の通り、「(」「)」は不要です。「呂布呂玲綺陳宮張遼曹操夏侯惇 攻攻攻防迅迅」とクラスをまとめて入力してもOKです。</p>
+            <h4>サイトのご利用について</h4>
+            <p>本サービスの全部または一部は予告なく停止することがあります。予めご了承ください。</p>
+            <p>ブラウザのバージョンによってはJavascriptが動作しない場合があります。正常に動作しない場合は最新のブラウザでお試しください。</p>
+            <p>iOS14、iPadOS14以前で動作しないことを確認しています。iOS15、iPadOS15以降でお試しください。</p>
+          </div>
+
+        </div>
+
+      </article>
+<!-- 
+      <article class="blog-post">
+      </article>
+ -->
+<!-- 
+      <nav class="blog-pagination" aria-label="Pagination">
+      </nav>
+ -->
+    </div>
+
+    <div class="col-md-4">
+      <div class="position-sticky" style="top: 2rem;">
+
+        <div class="p-4 mb-3">
+          <a class="twitter-timeline" data-lang="en" data-height="480" href="https://twitter.com/smusou_sp?ref_src=twsrc%5Etfw">Tweets by smusou_sp</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+
+        <div class="p-4">
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+    <!-- <script src="./static/js/tags.js" type="module"></script> -->
+    <script src="./static/js/sanmuso.js?version=3.1" type="module"></script>
+  </body>
+</html>
